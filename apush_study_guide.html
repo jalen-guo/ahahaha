@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP US History — Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1510;
+  --parchment: #f5f0e8;
+  --cream: #ede7d9;
+  --rust: #8b3a1e;
+  --gold: #c4921a;
+  --muted: #6b5f50;
+  --border: #c8b99a;
+  --highlight: #f0e4c4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Source Serif 4', Georgia, serif; background: var(--parchment); color: var(--ink); font-size: 15px; line-height: 1.7; }
+.site-header { background: var(--ink); color: var(--parchment); padding: 3rem 2rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+.site-header::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,.03) 40px, rgba(255,255,255,.03) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,.03) 40px, rgba(255,255,255,.03) 41px); }
+.header-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; position: relative; }
+.site-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; position: relative; }
+.site-header h1 span { color: var(--gold); }
+.header-sub { font-family: 'Source Serif 4', serif; font-style: italic; font-weight: 300; font-size: 1.05rem; color: rgba(245,240,232,.65); margin-top: .75rem; position: relative; }
+.header-meta { display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; position: relative; }
+.header-meta span { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(245,240,232,.5); letter-spacing: .1em; }
+.sticky-nav { position: sticky; top: 0; z-index: 100; background: var(--ink); border-bottom: 2px solid var(--gold); padding: .5rem 1rem; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+.sticky-nav::-webkit-scrollbar { display: none; }
+.nav-inner { display: inline-flex; gap: .25rem; min-width: max-content; }
+.nav-btn { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .05em; padding: 4px 12px; border-radius: 2px; border: none; background: transparent; color: rgba(245,240,232,.6); cursor: pointer; transition: all .15s; white-space: nowrap; }
+.nav-btn:hover, .nav-btn.active { background: var(--gold); color: var(--ink); }
+.container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+.period-section { margin-bottom: 3rem; }
+.period-section.hidden { display: none; }
+.period-header { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border); }
+.period-num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; line-height: 1; flex-shrink: 0; opacity: .18; }
+.period-info { flex: 1; }
+.period-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .2rem; }
+.period-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.period-years { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--gold); margin-top: .2rem; font-weight: 500; }
+.period-desc { font-style: italic; font-weight: 300; color: var(--muted); font-size: 14px; margin-top: .3rem; }
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.content-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+@media(max-width: 680px) { .content-grid, .content-grid.three { grid-template-columns: 1fr; } }
+.card { background: var(--cream); border: 0.5px solid var(--border); border-radius: 3px; padding: 1rem 1.1rem; }
+.card-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; }
+.card ul { padding-left: 1.1rem; }
+.card ul li { font-size: 13px; line-height: 1.6; margin-bottom: .25rem; color: var(--ink); }
+.card ul li strong { font-weight: 600; color: var(--rust); }
+.timeline { margin: .5rem 0; }
+.t-row { display: flex; gap: 10px; padding: 5px 0; border-bottom: 0.5px solid var(--border); align-items: baseline; }
+.t-row:last-child { border-bottom: none; }
+.t-year { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; color: var(--gold); min-width: 48px; flex-shrink: 0; }
+.t-text { font-size: 13px; line-height: 1.5; color: var(--ink); }
+.t-text strong { color: var(--rust); font-weight: 600; }
+.concept-box { background: var(--highlight); border-left: 3px solid var(--rust); border-radius: 0 3px 3px 0; padding: .75rem 1rem; margin: .75rem 0; font-size: 13px; font-style: italic; color: var(--ink); line-height: 1.6; }
+.concept-box strong { font-style: normal; color: var(--rust); }
+.full-card { background: var(--cream); border: 0.5px solid var(--border); border-radius: 3px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.figure-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .6rem; }
+.figure-card { background: var(--parchment); border: 0.5px solid var(--border); border-radius: 2px; padding: .6rem .75rem; }
+.figure-name { font-weight: 600; font-size: 13px; color: var(--rust); }
+.figure-role { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.ornament { text-align: center; color: var(--border); font-size: 18px; letter-spacing: .5rem; margin: 2.5rem 0; user-select: none; }
+.exam-tip { background: var(--ink); color: var(--parchment); border-radius: 3px; padding: .75rem 1rem; font-size: 13px; line-height: 1.6; margin-top: .75rem; }
+.tip-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .15em; color: var(--gold); margin-bottom: .3rem; }
+footer { background: var(--ink); color: rgba(245,240,232,.4); text-align: center; padding: 1.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .08em; margin-top: 3rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-label">Complete Exam Preparation</div>
+  <h1>AP United States<br><span>History</span></h1>
+  <p class="header-sub">Periods 1 – 9 &nbsp;·&nbsp; Pre-Columbian to the Present</p>
+  <div class="header-meta">
+    <span>9 PERIODS</span>
+    <span>·</span>
+    <span>~500 YEARS</span>
+    <span>·</span>
+    <span>KEY EVENTS, CONCEPTS &amp; FIGURES</span>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showAll(this)">All Periods</button>
+    <button class="nav-btn" onclick="showPeriod('p1',this)">P1 · 1491–1607</button>
+    <button class="nav-btn" onclick="showPeriod('p2',this)">P2 · 1607–1754</button>
+    <button class="nav-btn" onclick="showPeriod('p3',this)">P3 · 1754–1800</button>
+    <button class="nav-btn" onclick="showPeriod('p4',this)">P4 · 1800–1848</button>
+    <button class="nav-btn" onclick="showPeriod('p5',this)">P5 · 1844–1877</button>
+    <button class="nav-btn" onclick="showPeriod('p6',this)">P6 · 1865–1898</button>
+    <button class="nav-btn" onclick="showPeriod('p7',this)">P7 · 1890–1945</button>
+    <button class="nav-btn" onclick="showPeriod('p8',this)">P8 · 1945–1980</button>
+    <button class="nav-btn" onclick="showPeriod('p9',this)">P9 · 1980–Present</button>
+    <button class="nav-btn" onclick="showPeriod('strat',this)">Exam Strategy</button>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- PERIOD 1 -->
+<section class="period-section" id="p1">
+  <div class="period-header">
+    <div class="period-num">1</div>
+    <div class="period-info">
+      <div class="period-tag">Period 1 · ~7% of Exam</div>
+      <div class="period-title">Pre-Columbian Americas &amp; First Contact</div>
+      <div class="period-years">1491 – 1607</div>
+      <div class="period-desc">Native societies, European motivations, Columbian Exchange, early colonization</div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Native American Societies</div>
+      <ul>
+        <li><strong>Great Plains:</strong> nomadic, buffalo-centered economies</li>
+        <li><strong>Southwest (Pueblo):</strong> sedentary, agriculture, complex trade</li>
+        <li><strong>Pacific NW:</strong> fishing, potlatch, stratified society</li>
+        <li><strong>Eastern Woodlands:</strong> Iroquois Confederacy — proto-democratic governance</li>
+        <li><strong>Mesoamerica:</strong> Aztec, Maya — large urban centers, tribute systems</li>
+        <li>No single "Native American" experience — extraordinary diversity</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">European Motivations (3 G's)</div>
+      <ul>
+        <li><strong>Gold:</strong> mercantilism — extract wealth from colonies</li>
+        <li><strong>Glory:</strong> national competition (Spain vs. Portugal vs. England)</li>
+        <li><strong>God:</strong> spread Christianity, justify conquest</li>
+        <li>Technological edge: gunpowder, steel, ocean navigation</li>
+        <li>Reconquista mentality shaped Spanish colonization model</li>
+        <li>Joint-stock companies funded English ventures</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">The Columbian Exchange</div>
+    <div class="content-grid three">
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.4rem;">To Europe / Africa / Asia</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;">Maize, potatoes, tomatoes</li>
+          <li style="font-size:13px;">Tobacco, cacao, vanilla</li>
+          <li style="font-size:13px;">New World silver</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.4rem;">To the Americas</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;"><strong>Disease:</strong> smallpox, measles, flu — 90% population loss</li>
+          <li style="font-size:13px;">Horses (transformed Plains cultures)</li>
+          <li style="font-size:13px;">Cattle, pigs, sheep</li>
+          <li style="font-size:13px;">Enslaved Africans via Atlantic Slave Trade</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.4rem;">Global Impact</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;">European population boom from new crops</li>
+          <li style="font-size:13px;">Transformed global economics</li>
+          <li style="font-size:13px;">Enabled transatlantic slavery</li>
+          <li style="font-size:13px;">Ecological transformation of both hemispheres</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Spanish Colonization</div>
+      <ul>
+        <li><strong>Encomienda system:</strong> forced Native labor for Spanish colonizers</li>
+        <li><strong>Bartolomé de las Casas:</strong> documented abuses; argued for Native rights</li>
+        <li>Mission system in Southwest and Florida</li>
+        <li>Caste system: peninsulares → criollos → mestizos → Native/African</li>
+        <li><strong>Pueblo Revolt (1680):</strong> Natives expelled Spanish from New Mexico</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">European Colonial Models Compared</div>
+      <ul>
+        <li><strong>Spain:</strong> Caribbean, Mexico, SW, FL — extraction, conversion</li>
+        <li><strong>Portugal:</strong> Brazil, African coast, slave trade</li>
+        <li><strong>France:</strong> Canada, Great Lakes, Mississippi — fur trade, Native alliances</li>
+        <li><strong>Netherlands:</strong> Hudson River valley, trade focus</li>
+        <li><strong>England:</strong> late arrival — joint-stock, permanent settlement model</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 1</div>
+    Focus on comparing European colonial models and the Columbian Exchange's consequences. The exam often asks you to explain how Native societies adapted or resisted — avoid generalizing; be specific about which group.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 2 -->
+<section class="period-section" id="p2">
+  <div class="period-header">
+    <div class="period-num">2</div>
+    <div class="period-info">
+      <div class="period-tag">Period 2 · ~10% of Exam</div>
+      <div class="period-title">Colonization &amp; Colonial Society</div>
+      <div class="period-years">1607 – 1754</div>
+      <div class="period-desc">English colonies take root; slavery institutionalized; regional differences emerge</div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">New England Colonies</div>
+      <ul>
+        <li><strong>Puritans:</strong> "City upon a Hill" — moral/religious community</li>
+        <li>Town meeting governance — early democratic seeds</li>
+        <li><strong>Roger Williams:</strong> religious tolerance → Rhode Island</li>
+        <li><strong>Anne Hutchinson:</strong> antinomianism — challenged church authority, banished</li>
+        <li><strong>King Philip's War (1675–76):</strong> deadliest per capita colonial conflict</li>
+        <li>Half-Way Covenant (1662) — declining Puritan strictness</li>
+        <li>Congregational church dominates; literacy valued for Bible reading</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Middle Colonies</div>
+      <ul>
+        <li>Most ethnically diverse: Dutch, German, Scots-Irish, English</li>
+        <li><strong>Pennsylvania (Penn):</strong> Quaker tolerance and pacifism</li>
+        <li>Breadbasket — wheat, grain exports to Atlantic markets</li>
+        <li>New York: patroon system — large Dutch land grants</li>
+        <li>Growing merchant class; flourishing Atlantic trade networks</li>
+        <li>Greater religious pluralism than New England</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Southern Colonies</div>
+      <ul>
+        <li><strong>Virginia (1607):</strong> Jamestown — tobacco became economic salvation</li>
+        <li>Headright system → land inequality → reliance on indentured servants</li>
+        <li><strong>Bacon's Rebellion (1676):</strong> class tension between planters and poor whites → accelerated shift to enslaved African labor</li>
+        <li>South Carolina: rice and indigo — enslaved majority population</li>
+        <li><strong>Stono Rebellion (1739):</strong> largest slave revolt in colonial era</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Development of Racial Slavery</div>
+      <ul>
+        <li>1619: first Africans arrive in Virginia (ambiguous legal status)</li>
+        <li>1660s–1705: Virginia slave codes — race-based, hereditary, permanent</li>
+        <li><strong>Middle Passage:</strong> 10–15% death rate; brutal conditions</li>
+        <li>Triangle Trade: goods → Africa → enslaved people → Americas → raw materials → Europe</li>
+        <li>Enslaved people retained African traditions, music, religion (syncretism)</li>
+        <li>Resistance: everyday acts (slowdowns, feigning illness) and organized revolt</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">Colonial Governance, Thought &amp; Religion</div>
+    <div class="concept-box"><strong>Salutary Neglect:</strong> Britain's informal policy of loosely enforcing trade laws allowed colonies to develop self-governance habits. When Britain ended this after 1763, colonists felt their customary rights were being violated — a key cause of revolutionary sentiment.</div>
+    <div class="content-grid">
+      <div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Navigation Acts (1651–73):</strong> colonies must trade with Britain only; enforced mercantilist doctrine</li>
+          <li style="font-size:13px;margin-bottom:.3rem;">Colonial assemblies (Virginia House of Burgesses) gained real legislative power during this period</li>
+        </ul>
+      </div>
+      <div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Great Awakening (1730s–40s):</strong> religious revival — emotional, democratic; challenged established church hierarchies</li>
+          <li style="font-size:13px;">Enlightenment ideas (Locke, Newton): reason, natural rights, social contract — planted revolutionary seeds</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 2</div>
+    The shift from indentured to enslaved labor (and the role of Bacon's Rebellion) is a classic SAQ. Compare New England vs. Chesapeake vs. South Carolina — each had distinct labor systems, religious cultures, and governance models. The Great Awakening's democratic implications often appear in DBQs.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 3 -->
+<section class="period-section" id="p3">
+  <div class="period-header">
+    <div class="period-num">3</div>
+    <div class="period-info">
+      <div class="period-tag">Period 3 · ~12% of Exam</div>
+      <div class="period-title">Revolution, Constitution &amp; the Early Republic</div>
+      <div class="period-years">1754 – 1800</div>
+      <div class="period-desc">French &amp; Indian War through Adams; creating the American nation</div>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">Road to Revolution Timeline</div>
+    <div class="timeline">
+      <div class="t-row"><span class="t-year">1754–63</span><span class="t-text"><strong>French &amp; Indian War</strong> — Britain defeats France; massive debt; tightens colonial control</span></div>
+      <div class="t-row"><span class="t-year">1763</span><span class="t-text"><strong>Proclamation of 1763</strong> — No settlement west of Appalachians; colonists furious</span></div>
+      <div class="t-row"><span class="t-year">1765</span><span class="t-text"><strong>Stamp Act</strong> — First direct internal tax; "No taxation without representation"</span></div>
+      <div class="t-row"><span class="t-year">1770</span><span class="t-text"><strong>Boston Massacre</strong> — 5 colonists killed; Sam Adams uses it as propaganda</span></div>
+      <div class="t-row"><span class="t-year">1773</span><span class="t-text"><strong>Boston Tea Party</strong> — Sons of Liberty protest tea monopoly; £10,000 of tea destroyed</span></div>
+      <div class="t-row"><span class="t-year">1774</span><span class="t-text"><strong>Intolerable Acts</strong> — British overreaction; closes Boston Harbor; unites colonial opposition</span></div>
+      <div class="t-row"><span class="t-year">1775</span><span class="t-text"><strong>Lexington &amp; Concord</strong> — "Shot heard round the world"; armed conflict begins</span></div>
+      <div class="t-row"><span class="t-year">1776</span><span class="t-text"><strong>Declaration of Independence</strong> — Lockean natural rights; grievances against George III; July 4</span></div>
+      <div class="t-row"><span class="t-year">1781</span><span class="t-text"><strong>Yorktown</strong> — Cornwallis surrenders; war effectively over; French alliance decisive</span></div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Revolutionary Ideas</div>
+      <ul>
+        <li><strong>Republicanism:</strong> civic virtue, self-governance, common good over self-interest</li>
+        <li><strong>Locke's liberalism:</strong> natural rights — life, liberty, property; consent of the governed</li>
+        <li><strong>Common Sense (Paine, 1776):</strong> popularized independence for ordinary people</li>
+        <li>Revolution was both conservative (preserving rights) AND radical (creating a republic)</li>
+        <li><strong>Limits:</strong> women, enslaved people, Indigenous people, and poor whites excluded from full citizenship</li>
+        <li>Abigail Adams: "Remember the Ladies" — early women's rights advocacy ignored</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Articles of Confederation (1781–89)</div>
+      <ul>
+        <li>Weak central government — states held sovereignty</li>
+        <li>No power to tax, regulate commerce, or enforce laws</li>
+        <li>No executive branch, no national judiciary</li>
+        <li><strong>Shays' Rebellion (1786):</strong> debt-ridden farmers revolt; government cannot respond — exposes weakness</li>
+        <li><strong>Northwest Ordinance (1787):</strong> major success — framework for new states; banned slavery NW of Ohio River</li>
+        <li>Failures led directly to the Constitutional Convention</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">The Constitution &amp; Ratification Debate</div>
+    <div class="content-grid">
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.5rem;">Key Compromises at Philadelphia</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Great Compromise:</strong> bicameral Congress — Senate (equal) + House (proportional)</li>
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Three-Fifths Compromise:</strong> enslaved persons counted as 3/5 for representation and taxation</li>
+          <li style="font-size:13px;"><strong>Commerce Compromise:</strong> Congress regulates trade; no export taxes; slave trade protected until 1808</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.5rem;">Federalists vs. Anti-Federalists</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Federalists</strong> (Hamilton, Madison, Jay): strong central government essential for stability and economic growth; Federalist Papers</li>
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Anti-Federalists</strong> (Henry, Mason, Brutus): feared tyranny; no protection of individual rights</li>
+          <li style="font-size:13px;"><strong>Compromise:</strong> Bill of Rights added as condition of ratification (1791)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Washington &amp; Adams Administrations</div>
+      <ul>
+        <li>Hamilton's economic program: national bank, assumption of state debts, tariffs — creates Federalist vs. Democratic-Republican split</li>
+        <li><strong>Whiskey Rebellion (1794):</strong> Hamilton tests federal authority — troops deployed; it works</li>
+        <li>Neutrality Proclamation — US stays out of French Revolutionary Wars</li>
+        <li><strong>Jay's Treaty (1795):</strong> unpopular; avoids war with Britain</li>
+        <li><strong>Washington's Farewell Address:</strong> warns against factions and permanent alliances</li>
+        <li><strong>XYZ Affair &amp; Quasi-War with France</strong> — Adams avoids full war; unpopular decision</li>
+        <li><strong>Alien &amp; Sedition Acts (1798):</strong> restrict speech; Virginia &amp; Kentucky Resolutions (nullification idea) respond</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Key Figures of the Founding Era</div>
+      <div class="figure-grid">
+        <div class="figure-card"><div class="figure-name">Thomas Jefferson</div><div class="figure-role">Declaration author; states' rights; agrarian democracy vision</div></div>
+        <div class="figure-card"><div class="figure-name">Alexander Hamilton</div><div class="figure-role">Strong central govt; national bank; commercial republic</div></div>
+        <div class="figure-card"><div class="figure-name">James Madison</div><div class="figure-role">"Father of the Constitution"; Federalist Papers #10 &amp; #51</div></div>
+        <div class="figure-card"><div class="figure-name">Abigail Adams</div><div class="figure-role">"Remember the Ladies"; early women's rights advocacy</div></div>
+        <div class="figure-card"><div class="figure-name">Benjamin Franklin</div><div class="figure-role">Diplomat; oldest delegate at Constitutional Convention</div></div>
+        <div class="figure-card"><div class="figure-name">John Adams</div><div class="figure-role">2nd president; avoided war with France; unpopular Alien &amp; Sedition Acts</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 3</div>
+    Period 3 is heavily tested. Know the Federalist vs. Anti-Federalist debate cold, all three Constitutional compromises, and why the Articles failed. The tension between liberty and order is the core theme — it runs through Period 4 and beyond.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 4 -->
+<section class="period-section" id="p4">
+  <div class="period-header">
+    <div class="period-num">4</div>
+    <div class="period-info">
+      <div class="period-tag">Period 4 · ~10% of Exam</div>
+      <div class="period-title">Democracy, Expansion &amp; Reform</div>
+      <div class="period-years">1800 – 1848</div>
+      <div class="period-desc">Jeffersonian and Jacksonian democracy; Market Revolution; reform movements; Manifest Destiny</div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Jefferson &amp; Madison Era</div>
+      <ul>
+        <li><strong>"Revolution of 1800":</strong> peaceful transfer of power; first in modern history</li>
+        <li><strong>Louisiana Purchase (1803):</strong> doubles US size; Jefferson's constitutional dilemma</li>
+        <li><strong>Marbury v. Madison (1803):</strong> Marshall establishes judicial review</li>
+        <li>Lewis &amp; Clark Expedition — explores West; Native diplomatic contacts</li>
+        <li><strong>Embargo Act (1807):</strong> backfires; hurts US economy more than Europe</li>
+        <li><strong>War of 1812:</strong> "second war of independence"; nationalism surges after; "Era of Good Feelings"</li>
+        <li><strong>Monroe Doctrine (1823):</strong> Western Hemisphere closed to future European colonization</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Jacksonian Democracy</div>
+      <ul>
+        <li>Expansion of white male suffrage (property requirements dropped in most states)</li>
+        <li>Jackson as "man of the people" vs. elite eastern establishment</li>
+        <li><strong>Bank War:</strong> Jackson destroys Second Bank of US — states' rights and populism</li>
+        <li><strong>Nullification Crisis (1832):</strong> South Carolina challenges tariff; Jackson threatens force; first test of union</li>
+        <li><strong>Indian Removal Act (1830) / Trail of Tears (1838):</strong> forced removal of Cherokee — 4,000+ die; Worcester v. Georgia ignored</li>
+        <li>Whig Party emerges as opposition to "King Andrew"</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">Market Revolution &amp; Social Change</div>
+    <div class="concept-box"><strong>Market Revolution:</strong> Shift from subsistence farming to market-based production. Transportation revolution (canals, railroads) and manufacturing (textile mills) transformed the economy, creating new social classes, reshaping gender roles, and deepening regional differences.</div>
+    <div class="content-grid three">
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.4rem;">Transportation</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;">Erie Canal (1825) — opens Midwest to Eastern markets</li>
+          <li style="font-size:13px;">Railroad expansion from 1830s</li>
+          <li style="font-size:13px;">National Road, turnpikes</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.4rem;">Labor Changes</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;">Lowell Mills: female factory workers; "mill girls"</li>
+          <li style="font-size:13px;">Irish and German immigration surge</li>
+          <li style="font-size:13px;">Early labor unions and strikes</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.4rem;">Society</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;">Cult of Domesticity — women as moral guardians of home</li>
+          <li style="font-size:13px;">Middle class expands dramatically</li>
+          <li style="font-size:13px;">Urban/rural divide deepens</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Reform Movements (Second Great Awakening)</div>
+      <ul>
+        <li>Religious revival sparks moral reform impulse among middle-class Protestants</li>
+        <li><strong>Abolitionism:</strong> Garrison (The Liberator), Frederick Douglass, Harriet Tubman (Underground Railroad); American Anti-Slavery Society</li>
+        <li><strong>Women's Rights:</strong> Seneca Falls Convention (1848) — Declaration of Sentiments mirrors Declaration of Independence; Stanton, Mott</li>
+        <li><strong>Temperance:</strong> anti-alcohol; largely women-led; leads to 18th Amendment (1919)</li>
+        <li>Public education (Horace Mann); prison reform, asylums (Dorothea Dix)</li>
+        <li>Transcendentalism: Emerson, Thoreau — individual conscience over society; civil disobedience</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Westward Expansion &amp; Manifest Destiny</div>
+      <ul>
+        <li><strong>Manifest Destiny:</strong> God-ordained right to expand to the Pacific; white supremacist undertones</li>
+        <li>Texas annexation (1845) → diplomatic crisis with Mexico</li>
+        <li>Oregon Trail — 300,000 migrants; "54-40 or Fight" with Britain</li>
+        <li><strong>Mexican-American War (1846–48):</strong> US gains California, New Mexico, Arizona, Texas</li>
+        <li><strong>Wilmot Proviso:</strong> no slavery in new territories — failed but inflamed sectional tensions</li>
+        <li>Native peoples displaced across the continent at accelerating rate</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 4</div>
+    Jacksonian Democracy's contradictions (expanded democracy for white men; Trail of Tears) are classic SAQ material. The reform movements tie directly to Period 5's abolitionism. Know how the Market Revolution deepened sectional differences between the industrializing North and the slave South.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 5 -->
+<section class="period-section" id="p5">
+  <div class="period-header">
+    <div class="period-num">5</div>
+    <div class="period-info">
+      <div class="period-tag">Period 5 · ~13% of Exam</div>
+      <div class="period-title">Slavery, Civil War &amp; Reconstruction</div>
+      <div class="period-years">1844 – 1877</div>
+      <div class="period-desc">Sectional crisis, emancipation, Civil War, and the contested rebuilding of the South</div>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">Road to Secession</div>
+    <div class="timeline">
+      <div class="t-row"><span class="t-year">1850</span><span class="t-text"><strong>Compromise of 1850</strong> — California free state; Fugitive Slave Act infuriates North; temporary peace</span></div>
+      <div class="t-row"><span class="t-year">1852</span><span class="t-text"><strong>Uncle Tom's Cabin (Stowe)</strong> — humanizes enslaved people; galvanizes Northern opinion</span></div>
+      <div class="t-row"><span class="t-year">1854</span><span class="t-text"><strong>Kansas-Nebraska Act</strong> — popular sovereignty overturns Missouri Compromise; Republican Party founded</span></div>
+      <div class="t-row"><span class="t-year">1856</span><span class="t-text"><strong>"Bleeding Kansas"</strong> — pro- and anti-slavery forces clash violently over territorial future</span></div>
+      <div class="t-row"><span class="t-year">1857</span><span class="t-text"><strong>Dred Scott v. Sandford</strong> — enslaved people not citizens; Congress cannot ban slavery anywhere</span></div>
+      <div class="t-row"><span class="t-year">1858</span><span class="t-text"><strong>Lincoln-Douglas Debates</strong> — Lincoln gains national attention opposing slavery's expansion</span></div>
+      <div class="t-row"><span class="t-year">1859</span><span class="t-text"><strong>John Brown's Raid on Harper's Ferry</strong> — terrorist to South; martyr to many in North</span></div>
+      <div class="t-row"><span class="t-year">1860</span><span class="t-text"><strong>Lincoln elected</strong> — South Carolina secedes within weeks; Confederacy formed Feb. 1861</span></div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Civil War (1861–1865)</div>
+      <ul>
+        <li><strong>Union advantages:</strong> industrial capacity, railroads, population 22M vs. 9M, navy</li>
+        <li><strong>Confederate advantages:</strong> defensive war, superior early military leadership (Lee, Jackson), high motivation</li>
+        <li>Lincoln's evolution: preserve the Union → also destroy slavery</li>
+        <li><strong>Emancipation Proclamation (Jan. 1863):</strong> frees enslaved people in Confederate states; morally reframes the war</li>
+        <li>54th Massachusetts Regiment — Black soldiers demonstrate courage at Fort Wagner</li>
+        <li><strong>Battle of Gettysburg (July 1863):</strong> turning point; Gettysburg Address redefines the war's meaning</li>
+        <li>Sherman's March to the Sea (1864) — total war; destroys Confederate will and infrastructure</li>
+        <li>Lee surrenders at Appomattox Court House, April 9, 1865</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Reconstruction (1865–1877)</div>
+      <ul>
+        <li><strong>13th Amendment (1865):</strong> abolishes slavery throughout the United States</li>
+        <li><strong>14th Amendment (1868):</strong> birthright citizenship; equal protection of laws</li>
+        <li><strong>15th Amendment (1870):</strong> Black male suffrage cannot be denied based on race</li>
+        <li>Freedmen's Bureau: education, labor contracts, food relief for formerly enslaved people</li>
+        <li>Black political participation: 16 Black men serve in Congress during Reconstruction</li>
+        <li>Radical Republicans vs. Johnson — Congress overrides presidential vetoes</li>
+        <li>KKK &amp; white terror campaigns systematically undermine Black political gains</li>
+        <li><strong>Compromise of 1877:</strong> Hayes becomes president; federal troops withdrawn from South — Reconstruction ends</li>
+      </ul>
+    </div>
+  </div>
+  <div class="concept-box"><strong>Why Reconstruction Failed:</strong> "Redeemer" governments restored white supremacy through Black Codes, sharecropping (debt peonage), convict leasing, and organized violence. The federal government's withdrawal of troops left freedpeople without protection. This failure set up Jim Crow and made 20th-century civil rights struggles necessary. The unfulfilled promise of Reconstruction is one of American history's defining "what-ifs."</div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 5</div>
+    One of the highest-tested periods. The cause of the Civil War is slavery — the exam penalizes "states' rights" answers that omit slavery. Know the Reconstruction amendments, why Reconstruction failed, and the Lincoln vs. Congressional Reconstruction debate. Compare to the Civil Rights Movement of the 1960s.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 6 -->
+<section class="period-section" id="p6">
+  <div class="period-header">
+    <div class="period-num">6</div>
+    <div class="period-info">
+      <div class="period-tag">Period 6 · ~13% of Exam</div>
+      <div class="period-title">Gilded Age, Industrialization &amp; Imperial Ambitions</div>
+      <div class="period-years">1865 – 1898</div>
+      <div class="period-desc">Big business, immigration, labor conflict, Populism, Native dispossession, overseas expansion</div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Industrial Capitalism</div>
+      <ul>
+        <li>Railroad expansion creates a unified national market</li>
+        <li><strong>Vertical integration (Carnegie/steel):</strong> owns all stages of production</li>
+        <li><strong>Horizontal integration (Rockefeller/oil):</strong> eliminates competitors in same industry; trusts and monopolies</li>
+        <li><strong>Social Darwinism:</strong> wealth = fitness; poverty = personal failure (Spencer, Sumner)</li>
+        <li><strong>Gospel of Wealth (Carnegie):</strong> wealthy have a duty to use wealth philanthropically</li>
+        <li><strong>Sherman Antitrust Act (1890):</strong> first federal regulation of monopolies; largely unenforced initially</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Labor &amp; New Immigration</div>
+      <ul>
+        <li>"New Immigrants" from Southern &amp; Eastern Europe (Italian, Polish, Jewish) — faced nativist hostility</li>
+        <li>Chinese immigrant labor on transcontinental railroad → <strong>Chinese Exclusion Act (1882)</strong></li>
+        <li>Tenement conditions, child labor, 12-hour workdays</li>
+        <li><strong>Knights of Labor:</strong> inclusive (women, Black workers); demanded 8-hour day</li>
+        <li><strong>AFL (Gompers):</strong> craft unions; skilled workers only; "bread and butter" goals</li>
+        <li><strong>Homestead (1892) &amp; Pullman (1894) strikes:</strong> government and Pinkertons break unions — setback for labor movement</li>
+        <li><strong>Haymarket Affair (1886):</strong> bomb explosion damages labor movement's public image</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Conquest of the West &amp; Native Americans</div>
+      <ul>
+        <li>Transcontinental Railroad (1869) opens Great Plains; destroys buffalo herds</li>
+        <li><strong>Homestead Act (1862):</strong> 160 acres free to settlers — massive land rush</li>
+        <li><strong>Battle of Little Bighorn (1876):</strong> Sioux/Cheyenne defeat Custer — last major Native victory</li>
+        <li><strong>Dawes Act (1887):</strong> breaks up tribal lands into individual allotments; destroys communal culture; "Kill the Indian, save the man"</li>
+        <li><strong>Wounded Knee Massacre (1890):</strong> 250+ Sioux killed by US Army — end of Indian Wars</li>
+        <li>Boarding schools force cultural erasure of Native children</li>
+        <li>Frederick Jackson Turner's Frontier Thesis (1893): democracy shaped by the frontier</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Gilded Age Politics &amp; Populism</div>
+      <ul>
+        <li>Political machines (Tammany Hall), spoils system, corruption era</li>
+        <li>Farmers squeezed: falling crop prices, railroad rate gouging, mounting debt</li>
+        <li><strong>Grange → Farmers' Alliance → Populist Party</strong> — grassroots agrarian movement</li>
+        <li>Populist platform: silver coinage (inflate currency), graduated income tax, direct election of senators, government ownership of railroads</li>
+        <li><strong>William Jennings Bryan "Cross of Gold" speech (1896)</strong> — silver vs. gold standard</li>
+        <li><strong>Plessy v. Ferguson (1896):</strong> "separate but equal" — Jim Crow declared constitutional</li>
+        <li>Lynching epidemic; <strong>Ida B. Wells</strong> leads anti-lynching journalism campaign</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">American Imperialism</div>
+    <div class="concept-box"><strong>Drivers of New Imperialism:</strong> Alfred Thayer Mahan argued naval power = national power; Social Darwinism applied to nations competing for global dominance; hunger for new export markets; missionary/civilizing impulse toward "lesser" peoples.</div>
+    <div class="content-grid">
+      <div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Spanish-American War (1898):</strong> USS Maine explosion, yellow journalism (Hearst, Pulitzer), "splendid little war"</li>
+          <li style="font-size:13px;margin-bottom:.3rem;">US gains: Philippines, Guam, Puerto Rico; Cuba gains nominal independence (Platt Amendment)</li>
+          <li style="font-size:13px;"><strong>Philippine-American War (1899–1902):</strong> brutal counterinsurgency; 200,000+ Filipino deaths; torture used</li>
+        </ul>
+      </div>
+      <div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Hawaii annexation (1898):</strong> US-backed overthrow of Queen Liliuokalani (1893)</li>
+          <li style="font-size:13px;margin-bottom:.3rem;"><strong>Anti-Imperialist League:</strong> Mark Twain, Andrew Carnegie, Samuel Gompers opposed empire</li>
+          <li style="font-size:13px;"><strong>Open Door Policy (1899):</strong> equal trade access to China; protects US commercial interests</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 6</div>
+    The contrast between the Gilded Age's celebration of capitalism and the suffering of workers and farmers is central. The Populist movement's demands (many adopted later by Progressives) are high-value. For imperialism, know the arguments FOR (Mahan, Manifest Destiny extended) and AGAINST (Anti-Imperialists citing ideals of self-determination).
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 7 -->
+<section class="period-section" id="p7">
+  <div class="period-header">
+    <div class="period-num">7</div>
+    <div class="period-info">
+      <div class="period-tag">Period 7 · ~17% of Exam — Highest Weight</div>
+      <div class="period-title">Progressivism, WWI, the Roaring 20s, Depression &amp; WWII</div>
+      <div class="period-years">1890 – 1945</div>
+      <div class="period-desc">Reform, world wars, boom-bust-depression, and the modern American state</div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Progressive Era</div>
+      <ul>
+        <li>Middle-class response to industrialization's excesses; faith in expertise and government regulation</li>
+        <li><strong>Muckrakers:</strong> Upton Sinclair (The Jungle → Pure Food and Drug Act), Ida Tarbell (Standard Oil breakup), Jacob Riis (tenement photography)</li>
+        <li><strong>Theodore Roosevelt:</strong> trust-busting (Northern Securities), conservation (National Parks), "Square Deal" — referee between capital and labor</li>
+        <li><strong>Woodrow Wilson:</strong> "New Freedom" — Federal Reserve Act, Clayton Antitrust Act, lower tariffs (Underwood)</li>
+        <li><strong>Constitutional amendments:</strong> 16th (income tax), 17th (direct election of senators), 18th (Prohibition), 19th (women's suffrage — 1920)</li>
+        <li><strong>NAACP founded (1909):</strong> W.E.B. Du Bois vs. Booker T. Washington debate (agitation vs. accommodation)</li>
+        <li>Jane Addams, Hull House — settlement house movement; social work profession</li>
+        <li>Progressive limits: largely excluded Black Americans in the South</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">World War I &amp; Its Aftermath</div>
+      <ul>
+        <li>US neutrality 1914–17; Wilson re-elected "He kept us out of war"</li>
+        <li>Entry triggers: Zimmermann Telegram, unrestricted submarine warfare (Lusitania sinking 1915)</li>
+        <li>War Industries Board: unprecedented federal economic mobilization</li>
+        <li><strong>Espionage (1917) &amp; Sedition (1918) Acts:</strong> suppressed anti-war speech — Schenck v. US; Eugene Debs imprisoned</li>
+        <li><strong>Great Migration begins:</strong> Black Americans move North for war jobs and escape Jim Crow</li>
+        <li><strong>Wilson's 14 Points:</strong> self-determination, freedom of seas, League of Nations</li>
+        <li>Treaty of Versailles — harsh on Germany; Senate rejects it; US never joins League</li>
+        <li>Post-war: Red Scare (1919–20), Palmer Raids, fear of Bolshevism</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">1920s: Prosperity &amp; Cultural Tension</div>
+      <ul>
+        <li>Consumer economy: cars (Ford Model T), radios, appliances, buying on credit</li>
+        <li>Flappers, jazz age, <strong>Harlem Renaissance</strong> — Langston Hughes, Zora Neale Hurston, Duke Ellington</li>
+        <li><strong>Immigration restriction:</strong> Emergency Quota Act (1921), National Origins Act (1924) — targets Southern and Eastern Europeans</li>
+        <li>KKK revival to 4 million members — anti-Black, anti-Catholic, anti-Jewish, anti-immigrant</li>
+        <li>Fundamentalism vs. modernism: <strong>Scopes "Monkey" Trial (1925)</strong></li>
+        <li><strong>Prohibition:</strong> 18th Amendment; bootlegging; organized crime flourishes (Al Capone)</li>
+        <li>Stock market speculation; buying on margin; easy credit → bubble building</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Great Depression (1929–1939)</div>
+      <ul>
+        <li><strong>Causes:</strong> stock market crash (Oct. 1929), bank failures, overproduction, Smoot-Hawley tariff, buying on margin, income inequality</li>
+        <li>25% unemployment; 9,000 banks fail; Hoovervilles; Dust Bowl Okies (Steinbeck's Grapes of Wrath)</li>
+        <li>Hoover's response: inadequate voluntarism; Bonus Army dispersed by military</li>
+        <li><strong>FDR's New Deal: "Relief, Recovery, Reform"</strong></li>
+        <li>1st New Deal: FDIC (bank deposits), AAA (farm prices), NRA (business codes), CCC, TVA</li>
+        <li>2nd New Deal: Social Security Act, Wagner Act (union rights), WPA (arts/public works)</li>
+        <li>Court-packing plan (1937) — FDR overreaches; Congress and public reject it</li>
+        <li><strong>Limits:</strong> AAA hurt Black sharecroppers; Social Security excluded domestic and agricultural workers (majority Black workforce)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">World War II Timeline &amp; Home Front</div>
+    <div class="timeline">
+      <div class="t-row"><span class="t-year">1939</span><span class="t-text">War begins in Europe; US maintains neutrality; Neutrality Acts restrict aid to belligerents</span></div>
+      <div class="t-row"><span class="t-year">1940–41</span><span class="t-text"><strong>Lend-Lease Act</strong> — arms Britain and USSR; "arsenal of democracy"; effectively ends neutrality</span></div>
+      <div class="t-row"><span class="t-year">Dec. 1941</span><span class="t-text"><strong>Pearl Harbor</strong> — Japan attacks; US enters war; Germany and Italy declare war on US</span></div>
+      <div class="t-row"><span class="t-year">1942</span><span class="t-text"><strong>Executive Order 9066</strong> — Japanese American internment; 120,000 relocated; Korematsu v. US (1944) upholds it</span></div>
+      <div class="t-row"><span class="t-year">1942–44</span><span class="t-text">Total mobilization: war production, rationing, women enter workforce (Rosie the Riveter), "Double V" campaign by Black Americans</span></div>
+      <div class="t-row"><span class="t-year">June 1944</span><span class="t-text"><strong>D-Day (Operation Overlord)</strong> — Allied invasion of Normandy; turns tide in Europe</span></div>
+      <div class="t-row"><span class="t-year">Aug. 1945</span><span class="t-text"><strong>Atomic bombs</strong> on Hiroshima (Aug. 6) and Nagasaki (Aug. 9); Japan surrenders Aug. 15; war ends</span></div>
+    </div>
+    <div class="concept-box" style="margin-top:.75rem;"><strong>WWII's transformative effects:</strong> Women in workforce in record numbers. GI Bill (1944) created the postwar middle class through education and home loans. Black Americans' "Double V" campaign — victory abroad and at home — accelerated civil rights demands. The federal government permanently expanded. The US emerged as a global superpower.</div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 7</div>
+    This is the single highest-weighted period (17%). Critical topics: Progressive Era causes and limits; Great Depression causes; New Deal's ideology AND its racial limits; WWII's home front transformations. A classic LEQ compares FDR's New Deal to Progressive Era reform — know both deeply.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 8 -->
+<section class="period-section" id="p8">
+  <div class="period-header">
+    <div class="period-num">8</div>
+    <div class="period-info">
+      <div class="period-tag">Period 8 · ~15% of Exam</div>
+      <div class="period-title">Cold War, Civil Rights &amp; the Liberal Consensus</div>
+      <div class="period-years">1945 – 1980</div>
+      <div class="period-desc">Truman through Carter: Cold War abroad, social revolution at home</div>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">Cold War: Origins &amp; Key Events</div>
+    <div class="concept-box"><strong>Containment Doctrine (George Kennan, 1946):</strong> Soviet expansionism must be stopped at every point of potential advance. This single doctrine shaped US foreign policy for 45 years — Korea, Vietnam, the arms race, CIA interventions, and Reagan's military buildup all flowed from it.</div>
+    <div class="timeline">
+      <div class="t-row"><span class="t-year">1947</span><span class="t-text"><strong>Truman Doctrine</strong> — aid to Greece &amp; Turkey; containment becomes official; <strong>Marshall Plan</strong> rebuilds Western Europe ($13B)</span></div>
+      <div class="t-row"><span class="t-year">1949</span><span class="t-text">NATO founded; China falls to communism; USSR tests atomic bomb — all shock Americans</span></div>
+      <div class="t-row"><span class="t-year">1950–53</span><span class="t-text"><strong>Korean War</strong> — "police action"; MacArthur fired by Truman; 38,000 Americans killed; ends at 38th parallel stalemate</span></div>
+      <div class="t-row"><span class="t-year">1950–54</span><span class="t-text"><strong>McCarthyism / Second Red Scare</strong> — HUAC; careers destroyed; Army-McCarthy hearings (1954) expose McCarthy; Senate censures him</span></div>
+      <div class="t-row"><span class="t-year">1957</span><span class="t-text"><strong>Sputnik</strong> — Soviet satellite; Space Race begins; NASA created; National Defense Education Act funds science</span></div>
+      <div class="t-row"><span class="t-year">1961</span><span class="t-text"><strong>Bay of Pigs</strong> — CIA-backed Cuban invasion fails; Kennedy embarrassed; Berlin Wall built</span></div>
+      <div class="t-row"><span class="t-year">1962</span><span class="t-text"><strong>Cuban Missile Crisis</strong> — 13 days; nuclear war nearly begins; resolved by secret deal; closest humanity came to nuclear war</span></div>
+      <div class="t-row"><span class="t-year">1972</span><span class="t-text">Nixon visits China; <strong>SALT I</strong> arms limitation treaty with USSR; détente replaces confrontation</span></div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Civil Rights Movement</div>
+      <ul>
+        <li><strong>Brown v. Board of Education (1954):</strong> overturns Plessy; "separate is inherently unequal" — Chief Justice Warren</li>
+        <li><strong>Montgomery Bus Boycott (1955–56):</strong> Rosa Parks; 381-day boycott; MLK emerges as leader</li>
+        <li>Greensboro sit-ins (1960); Freedom Rides (1961) — testing interstate desegregation</li>
+        <li>Birmingham campaign (1963): fire hoses and dogs on TV nationally — turns public opinion</li>
+        <li>March on Washington (1963) — 250,000 people; "I Have a Dream" speech</li>
+        <li><strong>Civil Rights Act (1964):</strong> bans discrimination in employment, public accommodations</li>
+        <li>Selma to Montgomery marches (1965); <strong>Voting Rights Act (1965)</strong> — eliminates literacy tests</li>
+        <li>Late 1960s: Black Power movement (Stokely Carmichael); Malcolm X; SNCC radicalization</li>
+        <li>MLK assassinated April 4, 1968; riots in 100+ cities</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Great Society &amp; Vietnam War</div>
+      <ul>
+        <li>LBJ's 1964 landslide enables massive legislation: Medicare, Medicaid, ESEA, Voting Rights Act, Hart-Celler Immigration Reform</li>
+        <li><strong>Gulf of Tonkin Resolution (1964):</strong> LBJ escalates Vietnam based on disputed incident</li>
+        <li>500,000 US troops in Vietnam by 1968; <strong>credibility gap</strong> — public doesn't believe official optimism</li>
+        <li><strong>Tet Offensive (Jan. 1968):</strong> surprise attacks across South Vietnam; shatters public confidence; LBJ declines to run again</li>
+        <li>1968: King killed, RFK killed, Chicago Democratic Convention riots — "the year America broke"</li>
+        <li>Nixon's "Vietnamization" (withdraw troops, train South Vietnamese); secretly bombs Cambodia</li>
+        <li><strong>Kent State (May 4, 1970):</strong> National Guard kills 4 student protesters; 4 million students strike</li>
+        <li>Pentagon Papers (1971): government lied about Vietnam for years</li>
+        <li><strong>War Powers Act (1973):</strong> limits president's ability to wage war without Congress</li>
+        <li>Fall of Saigon (April 30, 1975) — South Vietnam falls; helicopters evacuate Americans</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Social Movements of the 1960s–70s</div>
+      <ul>
+        <li><strong>Women's liberation:</strong> NOW (1966, Betty Friedan); ERA passes Congress but not ratified; Title IX (1972); The Feminine Mystique</li>
+        <li><strong>Roe v. Wade (1973):</strong> abortion rights established; galvanizes pro-choice and pro-life movements</li>
+        <li>Counterculture: Woodstock (1969), antiwar movement, sexual revolution, drug culture</li>
+        <li>César Chávez and United Farm Workers — Latino farmworker rights; grape boycott</li>
+        <li>American Indian Movement (AIM): Wounded Knee occupation (1973)</li>
+        <li>Gay rights: Stonewall Riots (1969) — birth of modern LGBTQ movement</li>
+        <li>Environmental movement: Earth Day (1970), EPA created, Clean Air and Clean Water Acts</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Nixon, Watergate &amp; Carter</div>
+      <ul>
+        <li>Nixon's "Southern Strategy" — appeals to white racial backlash; realigns Republican Party</li>
+        <li>Economic shocks: stagflation (high inflation + unemployment), 1973 OPEC oil embargo</li>
+        <li><strong>Watergate scandal:</strong> break-in at DNC headquarters → cover-up → impeachment hearings → Nixon resigns August 9, 1974 (only president to resign)</li>
+        <li>Ford pardons Nixon → public fury; erodes trust in government permanently</li>
+        <li>Carter: human rights foreign policy; <strong>Camp David Accords (1978)</strong> — Egypt-Israel peace treaty</li>
+        <li><strong>Iran Hostage Crisis (1979):</strong> 52 Americans held 444 days; rescue mission fails; devastates Carter</li>
+        <li>Soviet invasion of Afghanistan (1979): Carter Doctrine; Olympic boycott; Cold War re-escalates</li>
+        <li>Stagflation + hostages + gas lines → <strong>Reagan landslide 1980</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 8</div>
+    Know the civil rights movement's tactics AND its limits after legislative victories. The Vietnam War's connection to the credibility gap and long-term "Vietnam Syndrome" is critical. Watergate's legacy (distrust of government, congressional reforms) frequently appears. Compare the civil rights movement to Reconstruction for a classic across-period argument.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- PERIOD 9 -->
+<section class="period-section" id="p9">
+  <div class="period-header">
+    <div class="period-num">9</div>
+    <div class="period-info">
+      <div class="period-tag">Period 9 · ~10% of Exam</div>
+      <div class="period-title">Conservative Era, Globalization &amp; the New Millennium</div>
+      <div class="period-years">1980 – Present</div>
+      <div class="period-desc">Reagan Revolution through Obama; Cold War's end; 9/11; economic inequality; cultural wars</div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Reagan Revolution</div>
+      <ul>
+        <li><strong>Supply-side economics ("Reaganomics"):</strong> large tax cuts for wealthy; deregulation; "trickle-down" theory; federal deficits triple</li>
+        <li>Income inequality grows sharply; unions weakened</li>
+        <li><strong>PATCO strike (1981):</strong> Reagan fires 11,000 air traffic controllers — signals new era for labor relations</li>
+        <li><strong>Religious Right / Moral Majority (Jerry Falwell):</strong> evangelical Christians mobilized into Republican coalition; anti-abortion, school prayer</li>
+        <li>Reagan Doctrine: fund anti-communist rebels globally (Afghan mujahideen, Nicaraguan Contras)</li>
+        <li><strong>Iran-Contra affair:</strong> secret arms sales to Iran fund Contras; constitutional scandal</li>
+        <li>SDI ("Star Wars") — expensive missile defense; pressures Soviet economy</li>
+        <li><strong>INF Treaty (1987):</strong> first agreement to eliminate an entire class of nuclear weapons</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">End of the Cold War &amp; the 1990s</div>
+      <ul>
+        <li>Gorbachev: glasnost (openness) and perestroika (restructuring) — tries to reform USSR</li>
+        <li><strong>Berlin Wall falls: November 9, 1989</strong> — peaceful revolutions across Eastern Europe</li>
+        <li>Soviet Union formally dissolves: December 25, 1991</li>
+        <li><strong>Gulf War (1991):</strong> coalition expels Iraq from Kuwait in 100 hours; 90% approval for Bush; "Vietnam Syndrome" lifted</li>
+        <li>"Unipolar moment" — US becomes sole global superpower</li>
+        <li>Clinton: <strong>NAFTA (1993)</strong>; budget surpluses; dot-com economic boom</li>
+        <li><strong>Republican Revolution (1994):</strong> Gingrich's "Contract with America"; GOP takes House for first time in 40 years</li>
+        <li>Clinton impeached (1998) over Lewinsky affair; Senate acquits</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-card">
+    <div class="card-title">9/11 &amp; the War on Terror</div>
+    <div class="timeline">
+      <div class="t-row"><span class="t-year">Sept. 2001</span><span class="t-text"><strong>September 11 attacks</strong> — Al-Qaeda; 2,977 killed; Twin Towers destroyed, Pentagon struck; fundamentally changed America</span></div>
+      <div class="t-row"><span class="t-year">Oct. 2001</span><span class="t-text"><strong>PATRIOT Act</strong> — dramatically expanded surveillance and law enforcement powers; civil liberties vs. security debate begins</span></div>
+      <div class="t-row"><span class="t-year">Oct. 2001</span><span class="t-text"><strong>Afghanistan War</strong> begins — Taliban removed; Al-Qaeda disrupted; becomes America's longest war</span></div>
+      <div class="t-row"><span class="t-year">2002</span><span class="t-text"><strong>Department of Homeland Security</strong> created; largest federal reorganization since National Security Act (1947)</span></div>
+      <div class="t-row"><span class="t-year">Mar. 2003</span><span class="t-text"><strong>Iraq War</strong> begins — WMD claims prove false; "Mission Accomplished"; occupation descends into insurgency; Abu Ghraib scandal</span></div>
+      <div class="t-row"><span class="t-year">2005</span><span class="t-text"><strong>Hurricane Katrina</strong> — catastrophic federal response failure; exposes persistent racial and economic inequality</span></div>
+      <div class="t-row"><span class="t-year">2008</span><span class="t-text"><strong>Financial crisis</strong> — housing bubble collapse; Lehman Brothers fails; worst recession since 1929; government bailouts</span></div>
+    </div>
+  </div>
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Obama Administration (2009–2017)</div>
+      <ul>
+        <li>First African American president — historic 2008 victory; re-elected 2012</li>
+        <li><strong>American Recovery and Reinvestment Act (2009):</strong> $787B stimulus prevents economic collapse</li>
+        <li><strong>Affordable Care Act (2010):</strong> near-universal health insurance; most significant social legislation since Great Society</li>
+        <li>Dodd-Frank Act (2010) — financial re-regulation after 2008 crisis</li>
+        <li>Osama bin Laden killed by SEAL Team Six (May 2011)</li>
+        <li><strong>Obergefell v. Hodges (2015):</strong> same-sex marriage legal nationwide</li>
+        <li>Black Lives Matter movement emerges after Ferguson (2014)</li>
+        <li>Paris Climate Agreement (2015)</li>
+        <li>Tea Party movement; partisan polarization intensifies; congressional gridlock</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Long-Term Trends: 1980–Present</div>
+      <ul>
+        <li>Deindustrialization — manufacturing jobs lost to globalization; Rust Belt devastation</li>
+        <li>Rising income inequality — top 1% gains enormously; middle class stagnates</li>
+        <li>Immigration — Latino population grows substantially; Dreamers/DACA debate</li>
+        <li>Technological revolution — internet, social media transform economy, politics, and culture</li>
+        <li>Culture wars — abortion, affirmative action, LGBTQ rights, gun control divide the nation</li>
+        <li>Partisan polarization — both parties move toward their bases; compromise increasingly rare</li>
+        <li>America's global role — unilateralism vs. multilateralism debate continues</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exam-tip">
+    <div class="tip-label">Exam Focus — Period 9</div>
+    Period 9 SAQs and LEQs often ask you to compare conservatism's rise to earlier reform periods, or trace continuity and change from the New Deal liberal state. Know the Reagan Revolution's causes and legacy deeply. Be able to connect 9/11 to broader shifts in civil liberties, executive power, and foreign policy.
+  </div>
+</section>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- EXAM STRATEGY -->
+<section class="period-section" id="strat">
+  <div class="period-header">
+    <div class="period-num" style="font-size:2.5rem;">★</div>
+    <div class="period-info">
+      <div class="period-tag">Exam Preparation</div>
+      <div class="period-title">Exam Strategy, Format &amp; Thematic Review</div>
+      <div class="period-years">SAQ · LEQ · DBQ · MCQ</div>
+      <div class="period-desc">How to approach each section and maximize your score</div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">Exam Format</div>
+      <ul>
+        <li><strong>Section I-A:</strong> 55 Multiple Choice — 55 min (40% of score)</li>
+        <li><strong>Section I-B:</strong> 3 Short Answer Questions — 40 min (20%)</li>
+        <li><strong>Section II-A:</strong> 1 Document-Based Question — 60 min (25%)</li>
+        <li><strong>Section II-B:</strong> 1 Long Essay Question — 40 min (15%)</li>
+        <li>Total: ~3 hours 15 minutes</li>
+        <li>Score 3 = "qualified"; 4–5 = college credit at most schools</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Period Weighting on Exam</div>
+      <ul>
+        <li>P1 (1491–1607): ~7%</li>
+        <li>P2 (1607–1754): ~10%</li>
+        <li>P3 (1754–1800): ~12%</li>
+        <li>P4 (1800–1848): ~10%</li>
+        <li>P5 (1844–1877): ~13%</li>
+        <li>P6 (1865–1898): ~13%</li>
+        <li>P7 (1890–1945): ~17% ← highest</li>
+        <li>P8 (1945–1980): ~15%</li>
+        <li>P9 (1980–present): ~10%</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">SAQ Formula (Short Answer)</div>
+      <div class="concept-box"><strong>C-E-X per part:</strong> Claim → specific Evidence (name, date, law, event) → eXplanation of historical significance. 3–5 sentences per part. No thesis needed.</div>
+      <ul>
+        <li>Always give a SPECIFIC example — never vague generalizations</li>
+        <li>Don't just describe — explain the cause or significance</li>
+        <li>Part (c) is usually hardest — often asks for limits, counterarguments, or long-term effects</li>
+        <li>You can agree OR disagree with a given argument if your evidence supports it</li>
+        <li>No intro paragraph required; start directly with your claim</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">DBQ Rubric (7 points)</div>
+      <ul>
+        <li><strong>Thesis (1 pt):</strong> arguable claim beyond restating the prompt</li>
+        <li><strong>Contextualization (1 pt):</strong> broader historical context BEFORE the document period</li>
+        <li><strong>Doc Content (2 pts):</strong> accurately use 3 docs (1pt) or 6+ docs (2pts)</li>
+        <li><strong>Beyond Docs (1 pt):</strong> add specific outside evidence not in any document</li>
+        <li><strong>Sourcing (1 pt):</strong> HAPP for 3+ docs — Historical situation, Audience, Purpose, Point of view</li>
+        <li><strong>Complexity (1 pt):</strong> nuanced argument — corroboration, tension, or broader framing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="full-card">
+    <div class="card-title">Most Common LEQ &amp; DBQ Argument Frameworks</div>
+    <div class="content-grid three">
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.5rem;">Continuity &amp; Change</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.25rem;">Federal government's role: New Deal → Great Society → Reagan rollback</li>
+          <li style="font-size:13px;margin-bottom:.25rem;">Civil rights: legal gains vs. continued structural inequality</li>
+          <li style="font-size:13px;">US foreign policy: isolation → imperialism → containment</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.5rem;">Comparison</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.25rem;">Colonial models: New England vs. Chesapeake vs. Low Country</li>
+          <li style="font-size:13px;margin-bottom:.25rem;">Progressive Era reforms vs. New Deal</li>
+          <li style="font-size:13px;">Reconstruction vs. Civil Rights Movement</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--rust);margin-bottom:.5rem;">Causation</div>
+        <ul style="padding-left:1rem;">
+          <li style="font-size:13px;margin-bottom:.25rem;">Civil War causes (slavery is the answer)</li>
+          <li style="font-size:13px;margin-bottom:.25rem;">Causes of the Great Depression</li>
+          <li style="font-size:13px;">Rise of conservatism in the 1970s–80s</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-title">APUSH Thematic Learning Objectives</div>
+      <ul>
+        <li><strong>American and National Identity (NAT)</strong></li>
+        <li><strong>Work, Exchange, and Technology (WXT)</strong></li>
+        <li><strong>Geography and the Environment (GEO)</strong></li>
+        <li><strong>Migration and Settlement (MIG)</strong></li>
+        <li><strong>Politics and Power (PCE)</strong></li>
+        <li><strong>America in the World (WOR)</strong></li>
+        <li><strong>American and Regional Culture (ARC)</strong></li>
+        <li><strong>Social Structures (SOC)</strong></li>
+        <li>Every FRQ maps to one or more of these — identifying which helps structure your argument</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Key Thesis Formula</div>
+      <div class="concept-box"><strong>A strong APUSH thesis:</strong> States a historically defensible claim + establishes a line of reasoning (WHY it's true). One to two sentences. No "In this essay I will..."</div>
+      <ul>
+        <li><strong>Weak:</strong> "The New Deal changed America in many ways."</li>
+        <li><strong>Strong:</strong> "While the New Deal dramatically expanded federal authority over the economy and created lasting safety net programs, it fundamentally failed Black Americans by excluding them from key protections, revealing the limits of reform within a racially segregated political system."</li>
+        <li>Always include BOTH what happened AND the historical significance or causation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exam-tip">
+    <div class="tip-label">Final Exam Advice</div>
+    The single most important skill on APUSH is argumentation — every FRQ rewards a clear, defensible thesis with specific evidence over descriptive narration. Avoid vague generalizations ("people wanted change," "the government did things"). The complexity point on the DBQ is worth fighting for — the easiest way to earn it is to acknowledge a significant counterargument or tension in your documents. Practice writing thesis statements every day this week. Good luck.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  AP United States History &nbsp;·&nbsp; Complete Study Guide &nbsp;·&nbsp; All 9 Periods &nbsp;·&nbsp; Exam Strategy
+</footer>
+
+<script>
+function showAll(btn) {
+  document.querySelectorAll('.period-section').forEach(s => s.classList.remove('hidden'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function showPeriod(id, btn) {
+  document.querySelectorAll('.period-section').forEach(s => {
+    s.classList.toggle('hidden', s.id !== id);
+  });
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelector('#' + id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+document.querySelectorAll('.period-section').forEach(s => s.classList.remove('hidden'));
+</script>
+</body>
+</html>
